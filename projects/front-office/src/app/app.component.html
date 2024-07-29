@@ -1,0 +1,18 @@
+<div class="container-fluid p-4">
+  <h1>APPLICATION TEST</h1>
+  <hr>
+  <h2>Ticket price</h2>
+  <p>{{ ticketSrv.value() }}</p>
+  <button
+    class="btn btn-primary"
+    (click)="ticketSrv.setValue(ticketSrv.value() + 1)"
+  >
+    Increase ticket price
+  </button>
+
+  <hr/>
+  <h2>Luggages</h2>
+  @for(luggage of luggages(); track luggage.id) {
+  <p>{{ luggage.dest }} - {{ luggage.weight }} - {{ luggage.ticketID }}</p>
+  }
+</div>
