@@ -1,7 +1,7 @@
 import { Component, computed, HostBinding, inject, OnInit } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { TicketsDomainService } from '../../../../libs/tickets/domain/src/public-api';
-import { Luggage, LuggagesDomainService } from '../../../../libs/luggages/domain/src/public-api';
+import { LuggagesDomainService } from '../../../../libs/luggages/domain/src/public-api';
 
 @Component({
   selector: 'app-root',
