@@ -3,5 +3,74 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
+    "luggages-domain": {
+      "projectType": "library",
+      "root": "libs/luggages/domain",
+      "sourceRoot": "libs/luggages/domain/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:ng-packagr",
+          "options": {
+            "project": "libs/luggages/domain/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "libs/luggages/domain/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "libs/luggages/domain/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "tsConfig": "libs/luggages/domain/tsconfig.spec.json",
+            "polyfills": [
+              "zone.js",
+              "zone.js/testing"
+            ]
+          }
+        }
+      }
+    },
+    "tickets-domain": {
+      "projectType": "library",
+      "root": "libs/tickets/domain",
+      "sourceRoot": "libs/tickets/domain/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:ng-packagr",
+          "options": {
+            "project": "libs/tickets/domain/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "libs/tickets/domain/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "libs/tickets/domain/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "tsConfig": "libs/tickets/domain/tsconfig.spec.json",
+            "polyfills": [
+              "zone.js",
+              "zone.js/testing"
+            ]
+          }
+        }
+      }
+    }
+  },
+  "cli": {
+    "analytics": false
   }
 }

@@ -8,6 +8,14 @@
     "noImplicitOverride": true,
     "noPropertyAccessFromIndexSignature": true,
     "noImplicitReturns": true,
+    "paths": {
+      "luggages-domain": [
+        "./dist/luggages-domain"
+      ],
+      "tickets-domain": [
+        "./dist/tickets-domain"
+      ]
+    },
     "noFallthroughCasesInSwitch": true,
     "skipLibCheck": true,
     "esModuleInterop": true,
