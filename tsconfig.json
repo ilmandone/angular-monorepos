@@ -5,10 +5,10 @@
   "compilerOptions": {
     "paths": {
       "back-office": [
-        "./dist/back-office"
+        "./projects/back-office/src/public-api.ts"
       ],
       "front-office": [
-        "./dist/front-office"
+        "./projects/front-office/src/public-api.ts"
       ]
     },
     "outDir": "./dist/out-tsc",

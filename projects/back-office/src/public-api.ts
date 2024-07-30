@@ -3,4 +3,3 @@
  */
 
 export * from './lib/back-office.service';
-export * from './lib/back-office.component';

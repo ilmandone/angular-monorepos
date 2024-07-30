@@ -3,4 +3,3 @@
  */
 
 export * from './lib/front-office.service';
-export * from './lib/front-office.component';

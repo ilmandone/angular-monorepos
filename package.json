@@ -4,7 +4,8 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "ng build",
+    "build:back-office": "ng build --project=back-office",
+    "build:front-office": "ng build --project=front-office",
     "watch": "ng build --watch --configuration development",
     "test": "ng test"
   },
@@ -35,5 +36,9 @@
     "karma-jasmine-html-reporter": "~2.1.0",
     "ng-packagr": "^18.1.0",
     "typescript": "~5.5.2"
-  }
+  },
+  "workspaces": [
+    "projects/back-office",
+    "projects/front-office"
+  ]
 }
