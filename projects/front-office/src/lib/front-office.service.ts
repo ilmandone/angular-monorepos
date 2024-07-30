@@ -1,12 +1,23 @@
-import { inject, Injectable } from '@angular/core';
+import { computed, inject, Injectable, signal } from '@angular/core';
 import { BackOfficeService } from 'back-office';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class FrontOfficeService {
+  private readonly _boSrv = inject(BackOfficeService);
+  private readonly _ticketVal = signal<number>(50);
 
-  private boSrv = inject(BackOfficeService);
+  ticketPrice = this._ticketVal.asReadonly();
 
-  paolo = this.boSrv.val;
+  fullInfo = computed(() => {
+    return {
+      ticketPrice: this._ticketVal(),
+      luggages: this._boSrv.luggages(),
+    };
+  });
+
+  setTicketPrice(price: number) {
+    this._ticketVal.set(price);
+  }
 }
