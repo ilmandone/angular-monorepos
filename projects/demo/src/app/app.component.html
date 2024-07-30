@@ -1,13 +1,13 @@
-<h1>{{title}}</h1>
+<h1>{{ title }}</h1>
 
 <hr />
 <h2>Ticket price:</h2>
-<p>{{fronSrv.ticketPrice()}}</p>
+<p>{{ fronSrv.ticketPrice() }}</p>
 
 <hr />
 <h2>Luggages:</h2>
-@for(luggage of fronSrv.fullInfo().luggages; track luggage.id){
-  {{luggage.destination}} - {{luggage.departure}}
+@for (luggage of fronSrv.fullInfo().luggages; track luggage.id) {
+  {{ luggage.destination }} - {{ luggage.departure }}
 }
 
 <router-outlet />

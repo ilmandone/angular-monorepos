@@ -4,6 +4,8 @@ const tseslint = require("typescript-eslint");
 const angular = require("angular-eslint");
 const prettierConfig = require('eslint-config-prettier');
 const prettierPlugin = require('eslint-plugin-prettier');
+const eslintHtml = require('eslint-plugin-html');
+
 
 module.exports = tseslint.config(
   {
@@ -48,6 +50,7 @@ module.exports = tseslint.config(
     ],
     plugins: {
       prettier: prettierPlugin,
+      html: eslintHtml,
     },
     rules: {
       ...prettierConfig.rules,
