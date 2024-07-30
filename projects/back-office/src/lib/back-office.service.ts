@@ -1,6 +1,6 @@
 import { Injectable, signal } from '@angular/core';
 
-export type Luggage = {
+export interface Luggage {
   id: number;
   destination: string;
   departure: string;
