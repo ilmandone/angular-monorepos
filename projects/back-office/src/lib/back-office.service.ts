@@ -6,14 +6,15 @@ export interface Luggage {
   departure: string;
 }
 
-export type Luggages = Luggage[]
+export type Luggages = Luggage[];
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class BackOfficeService {
-
-  private _luggages = signal<Luggages>([ { id: 1, destination: 'Paris', departure: 'London' } ]);
+  private _luggages = signal<Luggages>([
+    { id: 1, destination: 'Paris', departure: 'London' },
+  ]);
 
   luggages = this._luggages.asReadonly();
 
