@@ -1,24 +1,15 @@
-import { Injectable, signal } from '@angular/core';
-
-export interface Luggage {
-  id: number;
-  destination: string;
-  departure: string;
-}
-
-export type Luggages = Luggage[];
+import { inject, Injectable } from '@angular/core';
+import { Luggage, LuggagesDomainService } from '@domains/luggages-common';
 
 @Injectable({
   providedIn: 'root',
 })
 export class BackOfficeService {
-  private _luggages = signal<Luggages>([
-    { id: 1, destination: 'Paris', departure: 'London' },
-  ]);
+  private _luggagesSrv = inject(LuggagesDomainService);
 
-  luggages = this._luggages.asReadonly();
+  luggages = this._luggagesSrv.luggages;
 
   addLuggage(luggage: Luggage) {
-    this._luggages.update(luggages => [...luggages, luggage]);
+    this._luggagesSrv.addLuggage(luggage);
   }
 }

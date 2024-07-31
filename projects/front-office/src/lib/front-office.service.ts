@@ -1,4 +1,5 @@
-import { computed, inject, Injectable, signal } from '@angular/core';
+import { computed, inject, Injectable } from '@angular/core';
+import { TicketsDomainService } from '@domains/tickets-common';
 import { BackOfficeService } from 'back-office';
 
 @Injectable({
@@ -6,18 +7,22 @@ import { BackOfficeService } from 'back-office';
 })
 export class FrontOfficeService {
   private readonly _boSrv = inject(BackOfficeService);
-  private readonly _ticketVal = signal<number>(50);
+  private readonly _ticketSrv = inject(TicketsDomainService);
 
-  ticketPrice = this._ticketVal.asReadonly();
+  ticketPrice = this._ticketSrv.ticketPrice;
 
   fullInfo = computed(() => {
     return {
-      ticketPrice: this._ticketVal(),
+      ticketPrice: this.ticketPrice(),
       luggages: this._boSrv.luggages(),
     };
   });
 
-  setTicketPrice(price: number) {
-    this._ticketVal.set(price);
+  increaseTicketPrice = this._ticketSrv.increaseTicketPrice.bind(
+    this._ticketSrv
+  );
+
+  resetTicketPrice() {
+    this._ticketSrv.setTicketPrice(50);
   }
 }

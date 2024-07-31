@@ -11,7 +11,10 @@
         "./projects/front-office/src/public-api.ts"
       ],
       "@domains/luggages-common": [
-        "./dist/luggages-domain"
+        "./projects/_domains/luggages/common/src/public-api.ts" 
+      ],
+      "@domains/tickets-common": [
+        "./projects/_domains/tickets/common/src/public-api.ts"
       ]
     },
     "outDir": "./dist/out-tsc",

@@ -1,13 +1,18 @@
-<h1>{{ title }}</h1>
+<div class="container-fluid p-4">
+  <h1>{{ title }}</h1>
 
-<hr />
-<h2>Ticket price:</h2>
-<p>{{ fronSrv.ticketPrice() }}</p>
+  <hr />
+  <h2>Ticket price:</h2>
+  <p>{{ fronSrv.ticketPrice() }}</p>
 
-<hr />
-<h2>Luggages:</h2>
-@for (luggage of fronSrv.fullInfo().luggages; track luggage.id) {
-  {{ luggage.destination }} - {{ luggage.departure }}
-}
+  <button class="btn btn-primary me-3" (click)="fronSrv.increaseTicketPrice()">INCREASE</button>
+  <button class="btn btn-secondary" (click)="fronSrv.resetTicketPrice()">RESET</button>
 
-<router-outlet />
+  <hr />
+  <h2>Luggages:</h2>
+  @for (luggage of fronSrv.fullInfo().luggages; track luggage.id) {
+    {{ luggage.destination }} - {{ luggage.departure }}
+  }
+
+  <router-outlet />
+</div>

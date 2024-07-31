@@ -6,6 +6,7 @@
     "start": "ng serve",
     "build:back-office": "ng build --project=back-office",
     "build:front-office": "ng build --project=front-office",
+    "build:demo" : "ng build --project=demo",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "lint": "ng lint --fix",
