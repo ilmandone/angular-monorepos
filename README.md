@@ -1,5 +1,8 @@
 # Monorepo
 
+## TODO
+Wait for sheriff update and add index.ts barrels files
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.1.2.
 
 ## Development server
