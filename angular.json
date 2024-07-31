@@ -193,6 +193,24 @@
           }
         }
       }
+    },
+    "luggages-common": {
+      "projectType": "library",
+      "root": "projects/_domains/luggages/common",
+      "sourceRoot": "projects/_domains/luggages/common/src",
+      "prefix": "lib",
+      "architect": {
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "tsConfig": "projects/_domains/luggages/common/tsconfig.spec.json",
+            "polyfills": [
+              "zone.js",
+              "zone.js/testing"
+            ]
+          }
+        }
+      }
     }
   },
   "cli": {

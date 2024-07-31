@@ -9,6 +9,9 @@
       ],
       "front-office": [
         "./projects/front-office/src/public-api.ts"
+      ],
+      "@domains/luggages-common": [
+        "./dist/luggages-domain"
       ]
     },
     "outDir": "./dist/out-tsc",
