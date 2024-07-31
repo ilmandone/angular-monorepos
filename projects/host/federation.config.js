@@ -5,7 +5,7 @@ module.exports = withNativeFederation({
   name: 'host',
 
   exposes: {
-    './Component': './projects/host/src/app/app.component.ts',
+    './SimpleComponent': './projects/host/src/app/federated/simple/simple.component.ts',
   },
 
   shared: {
