@@ -1,5 +1,6 @@
 import { Routes } from '@angular/router';
 import { UselessService } from './local/useless-service.service';
+import { inject } from '@angular/core';
 
 export const routes: Routes = [
 	{
@@ -15,6 +16,11 @@ export const routes: Routes = [
 				useExisting: UselessService
 			}
 		],
+		resolve: {
+			recepie: () => 
+				inject(UselessService).getUserMe()
+			
+		}
 	},
 	{
 		path: '',

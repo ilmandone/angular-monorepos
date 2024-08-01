@@ -1,6 +1,7 @@
 import { loadRemoteModule } from '@angular-architects/native-federation';
 import { Routes } from '@angular/router';
 import { UselessShellService } from './local/services/useless-shell.service';
+import { inject } from '@angular/core';
 
 export const routes: Routes = [
 	{
@@ -16,6 +17,10 @@ export const routes: Routes = [
 				useExisting: UselessShellService
 			}
 		],
+		resolve: {
+			recepie: () => 
+				inject(UselessShellService).getRecepie()			
+		}
         
 	},
     {

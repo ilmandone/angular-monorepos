@@ -1,4 +1,6 @@
 import { Routes } from '@angular/router';
+import { UselessService } from '../../local/useless-service.service';
+import { inject } from '@angular/core';
 
 const SUB_ROUTES: Routes = [
 	{
