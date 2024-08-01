@@ -5,9 +5,13 @@ export const routes: Routes = [
 		path: 'main',
 		loadComponent: () => import('./federated/simple/simple.component'),
 	},
-    {
-        path: '',
-        redirectTo: '/main',
-        pathMatch: 'full'
-    }
+	{
+		path: 'sub',
+		loadChildren: () => import('./federated/sub/sub.routes'),
+	},
+	{
+		path: '',
+		redirectTo: '/main',
+		pathMatch: 'full',
+	},
 ];

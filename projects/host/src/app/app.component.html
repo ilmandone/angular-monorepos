@@ -1,5 +1,27 @@
 <div class="p-4">
-	<h1 class="text-3xl font-light mb-3">Host application</h1>
+	<header class="mb-3 flex justify-start items-center">
+		<h1 class="text-3xl font-light mb-3">Host application</h1>
+		<nav class="mx-4">
+			<a
+				class="mr-3 p-2 rounded bg-slate-200 text-slate-900 hover:bg-slate-700 hover:text-slate-200"
+				[routerLink]="['main']"
+				[routerLinkActive]="['active-route']"
+				>Simple</a
+			>
+			<a
+				class="mr-3 p-2 rounded bg-slate-200 text-slate-900 hover:bg-slate-700 hover:text-slate-200"
+				[routerLink]="['sub/default']"
+				[routerLinkActive]="['active-route']"
+				>Sub Default</a
+			>
+			<a
+				class="mr-3 p-2 rounded bg-slate-200 text-slate-900 hover:bg-slate-700 hover:text-slate-200"
+				[routerLink]="['sub/secondary']"
+				[routerLinkActive]="['active-route']"
+				>Sub Secondary</a
+			>
+		</nav>
+	</header>
 
 	<router-outlet />
 </div>

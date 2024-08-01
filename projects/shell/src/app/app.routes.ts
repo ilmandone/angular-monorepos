@@ -6,9 +6,11 @@ export const routes: Routes = [
 	{
 		path: 'main',
 		loadComponent: () => loadRemoteModule('host', './SimpleComponent'),
-        providers: [
-            HttpClient
-        ]
+	},
+    {
+		path: 'sub',
+		loadChildren: () => loadRemoteModule('host', './SubRoutes'),
+        
 	},
     {
         path: '',
