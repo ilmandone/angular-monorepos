@@ -1,1 +1,39 @@
-<p>simple works!</p>
+<section class="p-2 border-2 border-emerald border-dotted">
+	<h2 class="text-2xl">Simple component:</h2>
+	<p class="mb-4">
+		This is a simple component that use a self hosted service to retrive data.
+	</p>
+
+	<button
+		class="my-2 py-1.5 px-3 border-0 rounded bg-slate-800 text-white"
+		(click)="loadNewPost()">
+		Load new post
+	</button>
+
+	<div class="mt-3">
+        <h3 class="text-xl text-slate-800 pl-2 mb-1">Post</h3>
+		@if (post() !== null) {
+			<ul class="p-2 w-[50vw] rounded-lg border-2 border-dotted border-green-500">
+				<li><span class="font-bold">Title</span>: {{ post()?.title }}</li>
+				<li><span class="font-bold">Body</span>: {{ post()?.body }}</li>
+				<li>
+					<span class="font-bold">Views</span>:
+					{{ post()?.views?.toLocaleString() }}
+				</li>
+				<li>
+					<span class="font-bold">Tags</span>:
+					<ul class="inline-flex">
+						@for (t of post()?.tags; track t) {
+							<li class="px-1.5 py-0.5 bg-slate-300 rounded-md mr-2 text-sm">
+								{{ t }}
+							</li>
+						}
+					</ul>
+				</li>
+			</ul>
+		} @else {
+			<p
+				class="w-[50vw] h-40 bg-gradient-to-r from-slate-200 to-white rounded-lg"></p>
+		}
+	</div>
+</section>
