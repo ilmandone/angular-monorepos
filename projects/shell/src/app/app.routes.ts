@@ -1,6 +1,6 @@
 import { loadRemoteModule } from '@angular-architects/native-federation';
-import { HttpClient } from '@angular/common/http';
 import { Routes } from '@angular/router';
+import { UselessShellService } from './local/services/useless-shell.service';
 
 export const routes: Routes = [
 	{
@@ -10,6 +10,12 @@ export const routes: Routes = [
     {
 		path: 'sub',
 		loadChildren: () => loadRemoteModule('host', './SubRoutes'),
+		providers: [
+			{
+				provide: 'useless-service',
+				useExisting: UselessShellService
+			}
+		],
         
 	},
     {

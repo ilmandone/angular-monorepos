@@ -1,4 +1,5 @@
 import { Routes } from '@angular/router';
+import { UselessService } from './local/useless-service.service';
 
 export const routes: Routes = [
 	{
@@ -8,6 +9,12 @@ export const routes: Routes = [
 	{
 		path: 'sub',
 		loadChildren: () => import('./federated/sub/sub.routes'),
+		providers: [
+			{
+				provide: 'useless-service',
+				useExisting: UselessService
+			}
+		],
 	},
 	{
 		path: '',
