@@ -1,17 +1,18 @@
 import { Component, inject, OnInit } from '@angular/core';
 import { InitRecipie, Recepie } from '../../../local/useless-service.service';
 import { ActivatedRoute } from '@angular/router';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-sub-secondary',
   standalone: true,
-  imports: [],
+  imports: [CommonModule],
   templateUrl: './sub-secondary.component.html',
   styleUrl: './sub-secondary.component.scss'
 })
-class SubSecondaryComponent implements OnInit {
+export class SubSecondaryComponent<T> implements OnInit {
   private route = inject(ActivatedRoute);
-  recepie: Recepie = InitRecipie
+  recepie!: T
 
   ngOnInit(): void {
     this.route.data.subscribe((data) => {
@@ -21,5 +22,3 @@ class SubSecondaryComponent implements OnInit {
     })
   }
 }
-
-export default SubSecondaryComponent

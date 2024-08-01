@@ -1,5 +1,5 @@
 import { Routes } from '@angular/router';
-import { UselessService } from './local/useless-service.service';
+import { Recepie, UselessService } from './local/useless-service.service';
 import { inject } from '@angular/core';
 
 export const routes: Routes = [
@@ -9,7 +9,7 @@ export const routes: Routes = [
 	},
 	{
 		path: 'sub',
-		loadChildren: () => import('./federated/sub/sub.routes'),
+		loadChildren: () => import('./federated/sub/sub.routes').then(m => m.getSubRoutes<Recepie>()),
 		providers: [
 			{
 				provide: 'useless-service',
