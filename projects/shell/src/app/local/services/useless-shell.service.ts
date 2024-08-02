@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { inject, Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import { Observable, of, switchMap } from 'rxjs';
 
 export interface Todo {
   id: number
@@ -18,8 +18,16 @@ export class UselessShellService {
 
   UUID = `SHELL - ${crypto.randomUUID()}`
 
-	getRecepie(): Observable<Todo> {
+	getValue(): Observable<{title:string, data:Todo}> {
 		return this._httpClient
 			.get<Todo>('https://dummyjson.com/todos/1')
+      .pipe(
+				switchMap((r: Todo) => {
+					return of({
+						title: 'This is a TODO data example',
+						data: r,
+					});
+				})
+			);
 	}
 }

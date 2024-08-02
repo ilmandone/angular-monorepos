@@ -17,8 +17,8 @@ export const routes: Routes = [
 			}
 		],
 		resolve: {
-			recepie: () => 
-				inject(UselessService).getUserMe()
+			value: () => 
+				inject(UselessService).getValues()
 			
 		}
 	},

@@ -1,2 +1,16 @@
-<p>sub-secondary works!</p>
-<code>Nome: {{ recepie | json }}</code>
+<section class="p-2 border-2 border-emerald border-dotted">
+	<h2 class="text-2xl">Sub component:</h2>
+	<p class="mb-4">
+		This component is associated to a federated route and use a local resolver to retrive the data render here.
+        The same resolver return the page name.
+	</p>
+    <p class="text-xl mt-3 mb-1"><span class="font-semibold">TITLE:</span> {{value.title}}</p>
+	<ul>        
+		@for (item of value.data | keyvalue; track item.key) {
+			<li class="grid grid-cols-[200px_auto]">
+				<div class="font-semibold">{{ item.key }}:</div>
+                <div>{{ item.value }}</div>
+			</li>
+		}
+	</ul>
+</section>

@@ -2,7 +2,8 @@ import { Routes } from '@angular/router';
 import { Recepie, UselessService } from '../../local/useless-service.service';
 import { inject } from '@angular/core';
 
-export const getSubRoutes = <T>(): Routes => {
+
+export const getSubRoutes = <T extends Object>(): Routes => {
 	return [
 		{
 			path: '',

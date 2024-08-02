@@ -26,7 +26,7 @@ export const routes: Routes = [
 			},
 		],
 		resolve: {
-			recepie: () => inject(UselessShellService).getRecepie(),
+			value: () => inject(UselessShellService).getValue(),
 		},
 	},
 	{
